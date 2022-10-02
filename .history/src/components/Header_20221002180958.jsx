@@ -13,7 +13,7 @@ const Header = () => {
           <p className="text-xl font-bold text-headingColor">Xplorer</p>
         </div>
 
-       <div className="flex  gap-x-8">
+       <div className="flex  ">
        <ul className="flex items-center gap-x-8 ">
           <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
             Home
@@ -35,7 +35,7 @@ const Header = () => {
             <p className="text-sm text-white font-semibold">2</p>
           </div>
         </div>
-        <img className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl" src={Avatar} alt="profile" />
+        <img className="w-10" src={Avatar} alt="profile" />
        </div>
       </div>
 

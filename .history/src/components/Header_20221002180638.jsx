@@ -1,19 +1,18 @@
 import React from "react";
 import Logo from "../img/logo.png";
-import Avatar from "../img/avatar.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Header = () => {
   return (
     <header className="fixed z-50 w-screen p-6 px-16 ">
       {/* Desktop and tablet */}
-      <div className="hidden md:flex w-full h-full justify-between">
+      <div className="hidden md:flex w-full h-full items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer ">
           <img className="w-8 object-cover" src={Logo} alt="logo" />
           <p className="text-xl font-bold text-headingColor">Xplorer</p>
         </div>
 
-       <div className="flex  gap-x-8">
+       <div className="flex items">
        <ul className="flex items-center gap-x-8 ">
           <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
             Home
@@ -35,7 +34,6 @@ const Header = () => {
             <p className="text-sm text-white font-semibold">2</p>
           </div>
         </div>
-        <img className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl" src={Avatar} alt="profile" />
        </div>
       </div>
 

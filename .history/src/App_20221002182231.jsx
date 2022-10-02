@@ -1,5 +1,5 @@
 import React from 'react'
-import { CreateContainer, Header, MainContainer } from './components'
+import { Header, MainContainer } from './components'
 import {Route, Routes} from "react-router-dom"
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
       <main className="mt-24 p-8 w-full">
         <Routes>
           <Route path='/' element={<MainContainer/>}/>
-          <Route path='/createcontainer' element={<CreateContainer/>}/>
+          <Route path='/' element={</>}/>
         </Routes>
       </main>
     </div>

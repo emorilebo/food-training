@@ -35,7 +35,7 @@ const Header = () => {
             <p className="text-sm text-white font-semibold">2</p>
           </div>
         </div>
-        <img className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl" src={Avatar} alt="profile" />
+        <img className="w-10 min-w-[40px] h-10 min" src={Avatar} alt="profile" />
        </div>
       </div>
 
