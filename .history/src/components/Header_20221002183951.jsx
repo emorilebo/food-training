@@ -37,7 +37,7 @@ const Header = () => {
             <p className="text-sm text-white font-semibold">2</p>
           </div>
         </div>
-        <motion.img whileTap={{ scale: 0.6 }} className=" rounded-full w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer" src={Avatar} alt="profile" />
+        <motion.img whileTap={{ scale: 0.6 }} className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer" src={Avatar} alt="profile" />
        </div>
       </div>
 

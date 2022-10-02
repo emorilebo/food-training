@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "../img/grasperlogo.png";
-import Avatar from "../img/emori.jpeg";
+import Logo from "../img/logo.png";
+import Avatar from "../img/avatar.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -10,9 +10,9 @@ const Header = () => {
     <header className="fixed z-50 w-screen p-6 px-16 ">
       {/* Desktop and tablet */}
       <div className="hidden md:flex w-full h-full justify-between">
-        <Link to={"/"} className="flex items-center gap-2 cursor-pointer ">
-          <img className="w-10 object-cover rounded-lg" src={Logo} alt="logo" />
-          <p className="text-xl font-bold text-headingColor">Grasper Market</p>
+        <Link  className="flex items-center gap-2 cursor-pointer ">
+          <img className="w-8 object-cover" src={Logo} alt="logo" />
+          <p className="text-xl font-bold text-headingColor">Xplorer</p>
         </Link>
 
        <div className="flex  gap-x-8">
@@ -37,7 +37,7 @@ const Header = () => {
             <p className="text-sm text-white font-semibold">2</p>
           </div>
         </div>
-        <motion.img whileTap={{ scale: 0.6 }} className=" rounded-full w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer" src={Avatar} alt="profile" />
+        <motion.img whileTap={{ scale: 0.6 }} className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer" src={Avatar} alt="profile" />
        </div>
       </div>
 
