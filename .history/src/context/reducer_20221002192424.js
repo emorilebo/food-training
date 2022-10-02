@@ -1,8 +1,8 @@
 export const actionType = {
     SET_USER: "SET_USER",
-    // SET_FOOD_ITEMS: "SET_FOOD_ITEMS",
-    // SET_CART_SHOW: "SET_CART_SHOW",
-    // SET_CARTITEMS: "SET_CARTITEMS",
+    SET_FOOD_ITEMS: "SET_FOOD_ITEMS",
+    SET_CART_SHOW: "SET_CART_SHOW",
+    SET_CARTITEMS: "SET_CARTITEMS",
   };
   
 
@@ -29,10 +29,10 @@ export const actionType = {
     //     };
   
     //   case actionType.SET_CARTITEMS:
-        // return {
-        //   ...state,
-        //   cartItems: action.cartItems,
-        // };
+        return {
+          ...state,
+          cartItems: action.cartItems,
+        };
   
       default:
         return state;

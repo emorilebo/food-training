@@ -1,8 +1,8 @@
 
 
 export const initialState = {
-    user: null,
-    // foodItems: null,
+    user: userInfo,
+    foodItems: null,
     // cartShow: false,
     // cartItems: cartInfo,
   };

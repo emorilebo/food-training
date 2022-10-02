@@ -2,7 +2,7 @@
 
 export const initialState = {
     user: null,
-    // foodItems: null,
+    foodItems: null,
     // cartShow: false,
     // cartItems: cartInfo,
   };

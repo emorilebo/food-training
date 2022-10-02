@@ -16,16 +16,8 @@ const Header = () => {
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const login = async () => {
-    console.log("login");
-    const {
-      user: { refreshToken, providerData },
-    } = await signInWithPopup(firebaseAuth, provider);
-    dispatch({ type: actionType.SET_USER, user: providerData[0] });
-    localStorage.setItem("user", JSON.stringify(providerData[0]));
-  
-    console.log(
-      "https://lh3.googleusercontent.com/a-/ACNPEu__pb1Tj0FUrAAQvCrTzFTMSxo1sR6lIdV7qCZTJA=s96-c"
-    );
+    const {user: { refreshToken, providerData }, } = await signInWithPopup(firebaseAuth, provider);
+    dispatch({type: actionType.SET_USER,  user: providerData[0],});
   };
 
   return (
@@ -64,7 +56,7 @@ const Header = () => {
             <motion.img
               whileTap={{ scale: 0.6 }}
               className=" rounded-full w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer"
-              src={user ? user.photoURL : Avatar}
+              src={userAvatar}
               alt="profile"
               onClick={login}
             />
