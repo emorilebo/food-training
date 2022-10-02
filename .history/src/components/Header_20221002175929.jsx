@@ -7,7 +7,7 @@ const Header = () => {
     <header className="fixed z-50 w-screen p-6 px-16 ">
       {/* Desktop and tablet */}
       <div className="hidden md:flex w-full h-full ">
-        <div className="flex items-center gap-2 cursor-pointer">
+        <div className="flex items-center gap-2">
           <img className="w-8 object-cover" src={Logo} alt="logo" />
           <p className="text-xl font-bold text-headingColor">Xplorer</p>
         </div>
