@@ -55,24 +55,24 @@ const Header = () => {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-x-8 "
           >
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li className="text-xs text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Home
             </li>
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li className="text-xs text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Menu
             </li>
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li className="text-xs text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               About Us
             </li>
-            <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li className="text-xs text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Services
             </li>
           </motion.ul>
 
           <div className="flex relative items-center justify-center">
             <MdOutlineShoppingCart className="text-textColor text-2xl ml-8 cursor-pointer" />
-            <div className="absolute -top-1 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
-              <p className="text-sm text-white font-semibold">2</p>
+            <div className="absolute top-1 -right-1 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
+              <p className="text-[10px] text-white ">2</p>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ const Header = () => {
                   </Link>
                 )}
                 <p
-                  className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
+                  className="m-2 bg-gray-200 rounded-lg px-4 py-2 gap-3 cursor-pointer hover:bg-slate-300 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
                   onClick={logout}
                 >
                   <MdLogout /> Logout
@@ -113,9 +113,17 @@ const Header = () => {
 
       {/* mobile */}
       <div className="flex items-center justify-between md:hidden w-full h-full ">
+        
+        <div className="flex relative items-center justify-center">
+          <MdOutlineShoppingCart className="text-textColor text-2xl ml-8 cursor-pointer" />
+          <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
+            <p className="text-[10px] text-white ">2</p>
+          </div>
+        </div>
+
         <Link to={"/"} className="flex items-center gap-2 cursor-pointer ">
           <img className="w-10 object-cover rounded-lg" src={Logo} alt="logo" />
-          <p className="text-xl font-bold text-headingColor">Grasper</p>
+          <p className="text-xl font-bold text-amber-600">Grasper</p>
         </Link>
 
         <div className="relative">
@@ -137,7 +145,7 @@ const Header = () => {
                 <Link to={"/createItem"}>
                   <p className="px-4 py-2 gap-3 cursor-pointer rounded-lg hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-xs text-textColor">
                     {" "}
-                    <MdAdd /> New Items
+                    New Items <MdAdd />
                   </p>
                 </Link>
               )}
@@ -159,7 +167,7 @@ const Header = () => {
                 className="m-2 p-2 shadow-md gap-3 cursor-pointer hover:bg-slate-400 rounded-lg items-center flex transition-all duration-150 ease-in-out text-xs text-textColor bg-gray-200 justify-center"
                 onClick={logout}
               >
-                <MdLogout /> Logout
+                Logout <MdLogout />
               </p>
             </motion.div>
           )}
