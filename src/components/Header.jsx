@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed z-50 w-screen p-6 px-16 ">
+    <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 ">
       {/* Desktop and tablet */}
       <div className="hidden md:flex w-full h-full justify-between">
         <Link to={"/"} className="flex items-center gap-2 cursor-pointer ">
@@ -99,7 +99,42 @@ const Header = () => {
       </div>
 
       {/* mobile */}
-      <div className="flex md:hidden w-full h-full bg-blue-500 p-4"></div>
+      <div className="flex md:hidden w-full h-full ">
+        <Link to={"/"} className="flex items-center gap-2 cursor-pointer ">
+          <img className="w-10 object-cover rounded-lg" src={Logo} alt="logo" />
+          <p className="text-xl font-bold text-headingColor">Grasper</p>
+        </Link>
+
+        <div className="relative">
+          <motion.img
+            whileTap={{ scale: 0.6 }}
+            className=" rounded-full w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer"
+            src={user ? user.photoURL : Avatar}
+            alt="profile"
+            onClick={login}
+          />
+          {isMenu && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.6 }}
+              className="w-40 bg-primary shadow-xl rounded-lg flex flex-col absolute top-12 right-0 "
+            >
+              {user && user.email === "emorylebo@gmail.com" && (
+                <Link to={"/createItem"}>
+                  <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-xs text-textColor">
+                    {" "}
+                    <MdAdd /> New Items
+                  </p>
+                </Link>
+              )}
+              <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor">
+                <MdLogout /> Logout
+              </p>
+            </motion.div>
+          )}
+        </div>
+      </div>
     </header>
   );
 };
