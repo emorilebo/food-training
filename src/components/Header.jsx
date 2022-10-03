@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../img/grasperlogo.png";
 import Avatar from "../img/avatar.png";
 import { MdOutlineShoppingCart, MdAdd, MdLogout } from "react-icons/md";
@@ -15,6 +15,8 @@ const Header = () => {
 
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
+  const [isMenu, setIsMenu] = useState(false);
+
   const login = async () => {
     if (!user) {
       const {
@@ -23,6 +25,7 @@ const Header = () => {
       dispatch({ type: actionType.SET_USER, user: providerData[0] });
       localStorage.setItem("user", JSON.stringify(providerData[0]));
     } else {
+      setIsMenu(!isMenu);
     }
   };
 
@@ -66,12 +69,26 @@ const Header = () => {
               alt="profile"
               onClick={login}
             />
-            <div className="w-40 bg-primary shadow-xl rounded-lg flex flex-col absolute top-12 right-0 ">
-              {user && user.email === "emorylebo@gmail.com" && (
-                <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-base text-textColor"> <MdAdd/> New Items</p>
-              )}
-              <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-base text-textColor"><MdLogout/> Logout</p>
-            </div>
+            {isMenu && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.6 }}
+                className="w-40 bg-primary shadow-xl rounded-lg flex flex-col absolute top-12 right-0 "
+              >
+                {user && user.email === "emorylebo@gmail.com" && (
+                  <Link to={"/createItem"}>
+                    <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-xs text-textColor">
+                      {" "}
+                      <MdAdd /> New Items
+                    </p>
+                  </Link>
+                )}
+                <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor">
+                  <MdLogout /> Logout
+                </p>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>
