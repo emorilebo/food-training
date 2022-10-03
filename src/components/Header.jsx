@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../img/grasperlogo.png";
 import Avatar from "../img/avatar.png";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { MdOutlineShoppingCart, MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -16,14 +16,14 @@ const Header = () => {
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const login = async () => {
-    console.log("login");
-    const {
-      user: { refreshToken, providerData },
-    } = await signInWithPopup(firebaseAuth, provider);
-    dispatch({ type: actionType.SET_USER, user: providerData[0] });
-    localStorage.setItem("user", JSON.stringify(providerData[0]));
-  
-   
+    if (!user) {
+      const {
+        user: { refreshToken, providerData },
+      } = await signInWithPopup(firebaseAuth, provider);
+      dispatch({ type: actionType.SET_USER, user: providerData[0] });
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    } else {
+    }
   };
 
   return (
@@ -66,6 +66,12 @@ const Header = () => {
               alt="profile"
               onClick={login}
             />
+            <div className="w-40 bg-primary shadow-xl rounded-lg flex flex-col absolute top-12 right-0 ">
+              {user && user.email === "emorylebo@gmail.com" && (
+                <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-base text-textColor"> <MdAdd/> New Items</p>
+              )}
+              <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-base text-textColor"><MdLogout/> Logout</p>
+            </div>
           </div>
         </div>
       </div>
