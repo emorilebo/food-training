@@ -39,7 +39,12 @@ const Header = () => {
         </Link>
 
         <div className="flex  gap-x-8">
-          <ul className="flex items-center gap-x-8 ">
+          <motion.ul
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 200 }}
+            className="flex items-center gap-x-8 "
+          >
             <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Home
             </li>
@@ -52,7 +57,7 @@ const Header = () => {
             <li className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Services
             </li>
-          </ul>
+          </motion.ul>
 
           <div className="flex relative items-center justify-center">
             <MdOutlineShoppingCart className="text-textColor text-2xl ml-8 cursor-pointer" />
