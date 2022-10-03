@@ -23,9 +23,7 @@ const Header = () => {
     dispatch({ type: actionType.SET_USER, user: providerData[0] });
     localStorage.setItem("user", JSON.stringify(providerData[0]));
   
-    console.log(
-      "https://lh3.googleusercontent.com/a-/ACNPEu__pb1Tj0FUrAAQvCrTzFTMSxo1sR6lIdV7qCZTJA=s96-c"
-    );
+   
   };
 
   return (
