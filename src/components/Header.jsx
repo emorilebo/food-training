@@ -29,6 +29,16 @@ const Header = () => {
     }
   };
 
+  const logout = () => {
+    setIsMenu(false);
+    localStorage.clear();
+
+    dispatch({
+      type: actionType.SET_USER,
+      user: null,
+    });
+  };
+
   return (
     <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 ">
       {/* Desktop and tablet */}
@@ -89,7 +99,10 @@ const Header = () => {
                     </p>
                   </Link>
                 )}
-                <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor">
+                <p
+                  className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
+                  onClick={logout}
+                >
                   <MdLogout /> Logout
                 </p>
               </motion.div>
@@ -99,7 +112,7 @@ const Header = () => {
       </div>
 
       {/* mobile */}
-      <div className="flex md:hidden w-full h-full ">
+      <div className="flex items-center justify-between md:hidden w-full h-full ">
         <Link to={"/"} className="flex items-center gap-2 cursor-pointer ">
           <img className="w-10 object-cover rounded-lg" src={Logo} alt="logo" />
           <p className="text-xl font-bold text-headingColor">Grasper</p>
@@ -122,13 +135,30 @@ const Header = () => {
             >
               {user && user.email === "emorylebo@gmail.com" && (
                 <Link to={"/createItem"}>
-                  <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-xs text-textColor">
+                  <p className="px-4 py-2 gap-3 cursor-pointer rounded-lg hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-xs text-textColor">
                     {" "}
                     <MdAdd /> New Items
                   </p>
                 </Link>
               )}
-              <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor">
+              <ul className="flex flex-col   ">
+                <li className="text-xs text-textColor cursor-pointer  px-4 py-2 hover:bg-slate-200 hover:text-headingColor duration-100 transition-all ease-in-out">
+                  Home
+                </li>
+                <li className="text-xs text-textColor cursor-pointer  px-4 py-2 hover:bg-slate-200 hover:text-headingColor duration-100 transition-all ease-in-out">
+                  Menu
+                </li>
+                <li className="text-xs text-textColor cursor-pointer  px-4 py-2 hover:bg-slate-200 hover:text-headingColor duration-100 transition-all ease-in-out">
+                  About Us
+                </li>
+                <li className="text-xs text-textColor cursor-pointer  px-4 py-2 hover:bg-slate-200 hover:text-headingColor duration-100 transition-all ease-in-out">
+                  Services
+                </li>
+              </ul>
+              <p
+                className="m-2 p-2 shadow-md gap-3 cursor-pointer hover:bg-slate-400 rounded-lg items-center flex transition-all duration-150 ease-in-out text-xs text-textColor bg-gray-200 justify-center"
+                onClick={logout}
+              >
                 <MdLogout /> Logout
               </p>
             </motion.div>
