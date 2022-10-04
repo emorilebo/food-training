@@ -103,7 +103,7 @@ const Header = () => {
                   className="m-2 bg-gray-200 rounded-lg px-4 py-2 gap-3 cursor-pointer hover:bg-slate-300  items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
                   onClick={logout}
                 >
-                  <MdLogout /> Logout
+                  <MdLogout /> Logou
                 </p>
               </motion.div>
             )}
@@ -113,7 +113,6 @@ const Header = () => {
 
       {/* mobile */}
       <div className="flex items-center justify-between md:hidden w-full h-full ">
-        
         <div className="flex relative items-center justify-center">
           <MdOutlineShoppingCart className="text-textColor text-2xl ml-8 cursor-pointer" />
           <div className="absolute -top-2 -right-1 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
