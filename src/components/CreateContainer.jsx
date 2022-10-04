@@ -1,7 +1,7 @@
 import React from "react";
 
 const CreateContainer = () => {
-  return <div>CreateConr</div>;
+  return <div>Create</div>;
 };
 
 export default CreateContainer;
