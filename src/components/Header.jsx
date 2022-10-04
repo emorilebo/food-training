@@ -95,7 +95,7 @@ const Header = () => {
                   <Link to={"/createItem"}>
                     <p className="px-4 py-2 gap-3 cursor-pointer hover:bg-slate-200 flex items-center transition-all duration-150 ease-in-out text-xs text-textColor">
                       {" "}
-                      <MdAdd /> New Items
+                      <MdAdd /> New Item
                     </p>
                   </Link>
                 )}
