@@ -100,7 +100,7 @@ const Header = () => {
                   </Link>
                 )}
                 <p
-                  className="m-2 bg-gray-200 rounded-lg px-4 py-2 gap-3 cursor-pointer hover:bg-slate-300 items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
+                  className="m-2 bg-gray-200 rounded-lg px-4 py-2 gap-3 cursor-pointer hover:bg-slate-300  items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
                   onClick={logout}
                 >
                   <MdLogout /> Logout
@@ -116,7 +116,7 @@ const Header = () => {
         
         <div className="flex relative items-center justify-center">
           <MdOutlineShoppingCart className="text-textColor text-2xl ml-8 cursor-pointer" />
-          <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
+          <div className="absolute -top-2 -right-1 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
             <p className="text-[10px] text-white ">2</p>
           </div>
         </div>
