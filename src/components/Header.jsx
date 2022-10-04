@@ -103,7 +103,7 @@ const Header = () => {
                   className="m-2 bg-gray-200 rounded-lg px-4 py-2 gap-3 cursor-pointer hover:bg-slate-300  items-center flex transition-all duration-150 ease-in-out text-xs text-textColor"
                   onClick={logout}
                 >
-                  <MdLogout /> Logou
+                  <MdLogout /> Logout
                 </p>
               </motion.div>
             )}
