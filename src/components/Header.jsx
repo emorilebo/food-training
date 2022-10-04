@@ -62,7 +62,7 @@ const Header = () => {
               Menu
             </li>
             <li className="text-xs text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
-              About Us
+              About us
             </li>
             <li className="text-xs text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Services
